@@ -20,5 +20,13 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leleka14/Hong-Cong-Bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leleka14/Hong-Cong-Bootstrap/issues"
+  },
+  "homepage": "https://github.com/Leleka14/Hong-Cong-Bootstrap#readme"
 }
