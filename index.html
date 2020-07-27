@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type='text/css' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Ristorante Con Fusion</title>
@@ -86,16 +86,76 @@
                             <img src="img/logo.png" class="img-fluid">
                         </div>
                         <div class="col-12 col-sm-6 pt-sm-0 pt-5">
-                            <a role="button" href="#form-table-reserve" class="btn nav-link btn-warning btn-block" 
-                            data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+380631234567</strong>"
-                            data-placement="bottom">Reserve Table</a>
+                            <a role="button" href="" class="btn nav-link btn-warning btn-block" 
+                            data-toggle="modal" data-html="true" title="Or Call us at <br><strong>+380631234567</strong>"
+                            data-placement="bottom"
+                            data-target="#reserveModal">Reserve Table</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
+    <div class="modal fade" id="reserveModal" role="dialog">
+        <div class="modal-dialog" role="content">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        Reserve Table
+                    </h4>
+                    <button class="close" type="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-content justify-content-center" id="form-table-reserve">
+                        <div class="col-12">
+                            <form method="get" accept-charset="utf-8">
+                                <div class="form-group row">
+                                    <p class="col-12 col-sm-4">Number of Guests</p>
+                                    <div class="col-12 col-sm-8" >
+                                        <label class="radio-inline col-form-label" for="number1"><input type="radio" class="" id="number1" name="number"> 1</label>
+                                        
+                                        <label class="radio-inline col-form-label" for="number2"><input type="radio" class="" id="number2" name="number"> 2</label>
+                                        
+                                        <label class="radio-inline col-form-label" for="number3"><input type="radio" class="" id="number3" name="number"> 3</label>
+                                        
+                                        <label class="radio-inline col-form-label" for="number4"><input type="radio" class="" id="number4" name="number"> 4</label>
+                                        
+                                        <label class="radio-inline col-form-label" for="number5"><input type="radio" class="" id="number5" name="number"> 5</label>
+                                        
+                                        <label class="radio-inline col-form-label" for="number6"><input type="radio" class="" id="number6" name="number"> 6</label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <p class="col-12 col-sm-4">Section</p>
+                                    <div class="btn-group btn-group-toggle col-12 col-sm-6 btn-sm ml-1 d-none d-block" data-toggle="buttons">
+                                        <label for="" class="btn btn-danger btn-sm" >
+                                            <input type="radio" name="options" id="option1" autocomplete="off">Smoking
+                                        </label>
+                                        <label for="" class="btn btn-success btn-sm">
+                                            <input type="radio" name="options" id="option2" autocomplete="off">Non-Smoking
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <p class="col-12 col-sm-4">Date And Time</p>
+                                    <div class="col-12 col-sm-4">
+                                        <input type="text" class="form-control" placeholder="Date" name="date">
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <input type="text" class="form-control" placeholder="Time" name="time">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-primary btn-sm ml-1">Reserve</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row row-content">
             <div class="col">
@@ -135,6 +195,9 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <span id="carousel-button-icon" class="fa fa-pause"></span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -184,7 +247,8 @@
                 </div>
             </div>
         </div>
-        <div class="row row-content justify-content-center" id="form-table-reserve">
+    </div>
+        <!-- <div class="row row-content justify-content-center" id="form-table-reserve">
             <div class="col-12 col-md-7 bg-warning">
                 <h2 class="text-white">Reserve table</h2>
             </div>
@@ -220,12 +284,11 @@
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
-
+        </div> -->
+    
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="row row-content">
                 <div class="col-4 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
@@ -265,10 +328,24 @@
         </div>
     </footer>
         <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script>
+        $('#mycarousel').carousel({ interval: 2000 });
+        $("#carouselButton").click(function(){
+            if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                $("#mycarousel").carousel('pause');
+                $("#carouselButton").children("span").removeClass('fa-pause');
+                $("#carouselButton").children("span").addClass('fa-play');
+            }
+            else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                $("#mycarousel").carousel('cycle');
+                $("#carouselButton").children("span").removeClass('fa-play');
+                $("#carouselButton").children("span").addClass('fa-pause');                    
+            }
+        });
+    </script>
 </body>
 
 </html>
